@@ -1,3 +1,12 @@
+Envio de email utilizando a biblioteca SwiftMailer, 
+ 
+o script principal se encontra no index.php , só colocar as configuracoes do email , banco de dados!
+ 
+ Enjoy! 
+ 
+ 
+Descrição do Swift Mailer :
+
 Swift Mailer
 ------------
 
