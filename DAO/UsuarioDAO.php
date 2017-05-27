@@ -10,24 +10,24 @@ class UsuarioDAO {
         $this->conn = $registry->get('Connection');
     }
  
-    public function insert(Usuario $usuario) {
-        $this->conn->beginTransaction();
+    // public function insert(Usuario $usuario) {
+    //     $this->conn->beginTransaction();
  
-        try {
-            $stmt = $this->conn->prepare(
-                'INSERT INTO usuarios (nome, email) VALUES (:nome, :email)'
-            );
+    //     try {
+    //         $stmt = $this->conn->prepare(
+    //             'INSERT INTO usuarios (nome, email) VALUES (:nome, :email)'
+    //         );
  
-            $stmt->bindValue(':nome', $usuario->getNome());
-            $stmt->bindValue(':email', $usuario->getEmail());
-            $stmt->execute();
+    //         $stmt->bindValue(':nome', $usuario->getNome());
+    //         $stmt->bindValue(':email', $usuario->getEmail());
+    //         $stmt->execute();
  
-            $this->conn->commit();
-        }
-        catch(Exception $e) {
-            $this->conn->rollback();
-        }
-    }
+    //         $this->conn->commit();
+    //     }
+    //     catch(Exception $e) {
+    //         $this->conn->rollback();
+    //     }
+    // }
  
     public function getAll() {
         $statement = $this->conn->query(
@@ -47,6 +47,8 @@ class UsuarioDAO {
                 $usuario->setId($row->id);
                 $usuario->setNome($row->nome);
                 $usuario->setEmail($row->email);
+                $usuario->setCpf($row->cpf);
+ 
  
                 $results[] = $usuario;
             }

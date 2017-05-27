@@ -4,6 +4,7 @@ class Usuario {
     private $id;
     private $nome;
     private $email;
+    private $cpf;
  
     public function getId() {
         return $this->id;
@@ -29,6 +30,15 @@ class Usuario {
  
     public function setEmail($email) {
         $this->email = $email;
+        return $this;
+    }
+
+    public function getCpf() {
+        return $this->cpf;
+    }
+ 
+    public function setCpf($cpf) {
+        $this->cpf = $cpf;
         return $this;
     }
  
