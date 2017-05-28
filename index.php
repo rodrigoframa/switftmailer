@@ -5,11 +5,11 @@ require_once 'DAO/UsuarioDAO.php';
 require_once 'DAO/Usuario.php';
 
 // configuração do login e senha do email de envio ex: 'aluno@uema.br' '12345'
-$usernameemail = 'rodrigomaia@aluno.uema.br';
-$passwordemail = '!Q@W3e4r'; 
+$usernameemail = 'usuario@dominio.com';
+$passwordemail = 'suasenha'; 
 
 //Nome do usuario de envio do email 
-$namesent = 'Rodrigo NTI';
+$namesent = 'Nome do emissor';
 
 // configuração do servidor do email , para gmail usar :  smtp.gmail.com, 465, ssl
 $transport = Swift_SmtpTransport::newInstance('smtp.office365.com', 587, 'tls')
